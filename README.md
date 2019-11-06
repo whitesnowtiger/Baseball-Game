@@ -1,5 +1,5 @@
 # Baseball-Game
-Try and Play my Baseball Game!!
+Try my Baseball Game!!
 
 
 Guess 3 numbers. If you get all the numbers correct, then it will give you 3 strike. If you guessed right number, but it is not in correct digit(place), then it will say B for ball.
