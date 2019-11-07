@@ -13,35 +13,35 @@ type Result struct {
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	//무작위 숫자 3개를 만든다.
+	//Make 3 random numbers
 	numbers := MakeNumbers()
 
 	cnt := 0
 	for {
 		cnt++
-		//사용자의 입력을 받는다.
+		//Get input from keyboard
 		inputNumbers := InputNumbers()
 
-		//결과를 비교한다.
+		//compare the numbers
 		result := CompareNumbers(numbers, inputNumbers)
 
 		PrintResult(result)
 
-		//3s 인가?
+		//is it 3 strikes?
 		if IsGameEnd(result) {
-			// 게임끝
+			// game over
 			break
 		}
 	}
 
-	//게임끝.  몇번만에 맞췄는지 출력
+	//game over, how many time did user guess?
 	fmt.Printf("You got the answer in %d times.\n", cnt)
 
 }
 
 func MakeNumbers() [3]int {
 
-	//0-9 사이의 겹치지 않는 무작위 숫자 3개를 반환한다.
+	//return any 3 numbers that are from 0-9
 	var rst [3]int
 
 	for i := 0; i < 3; i++ {
@@ -50,7 +50,7 @@ func MakeNumbers() [3]int {
 			duplicated := false
 			for j := 0; j < i; j++ {
 				if rst[j] == n {
-					//겹친다. 다시 뽑는다.
+					//if the number is the same as before, then get a new random number
 					duplicated = true
 					break
 				}
